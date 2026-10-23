@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+            --primary:#2b2bc7;
+            --hover-primary:#03c0c0;
+            --header-primary:#0101ba;
+
+        }
+
+        html,body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+        header{
+            background-color: var(--header-primary);
+            color: white;
+            padding: 15px 25px;
+
+        }
+        header .title {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        header .subtitle {
+            color: rgb(219, 219, 219);
+        }
+
+        nav {
+            
+            background-color: #028181;
+            display: flex;
+            gap: 4px;
+            padding: 0 35px;
+        }
+
+        nav > div {
+            padding: 10px 15px;
+
+
+        }
+
+        nav > div > a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav > div > a:hover {
+            background-color: #02c0c0;
+        }
+
+        .container{
+            margin: 0 25px;
+        }
+
+        aside{
+            background-color: #eeffff;
+            border-left: 5px solid #02c0c0;
+            padding: 10px;
+        }
+        .aside-title{
+            font-weight: bold;
+            color: #2b2bc7;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        input[type="text"]{
+            padding: 5px 10px;
+            border:1px solid black;
+        }
+
+        input[type="email"]{
+            padding: 5px 10px;
+            border:1px solid black;
+        }
+        
+        select {
+            padding: 5px 10px;
+            border:1px solid black;
+        }
+
+        textarea{
+            padding: 5px 10px;
+            border:1px solid black;
+            width: 100%;
+        }
+
+        form {
+            width: 550px;
+        }
+
+        form > div{
+            margin: 5px 0;
+        }
+
+        button{
+            border: 0;
+            background-color: white;
+            padding: 8px 20px;
+        }
+
+        .submit{
+            background-color: #028181 ;
+            color: white;
+            transition: 0.3s ease-in-out;
+
+        }
+
+        .submit:hover{
+            background-color: #03c0c0 ;
+        }
+
+        .reset{
+            background-color: #fcfcfc ;
+            color: rgb(2, 2, 2);
+            transition: 0.3s ease-in-out;
+            border: 1px solid black;
+
+        }
+
+        .reset:hover{
+            background-color: #bababa ;
+        }
+
+        table{
+            border: 1px solid grey;
+            border-collapse: collapse;
+
+        }
+
+        thead{
+            background-color: #2b2bc7;
+            color: white;
+        }
+
+        td{
+            border: 1px solid grey;
+            padding: 8px 15px;
+        }
+
+        th{
+            padding: 8px 15px;
+
+        }
+
+        .table-event{
+            margin: 25px 0;
+
+        }
+        
+        .buttons{
+            margin: 25px 0;
+        }
+
+        .article-title{
+            font-weight: bold;
+            color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            ICS Coding Club
+        </div>
+        <div class="subtitle">
+            Learn. Build. Share. &mdash; Tangub City Global College
+        </div>
+    </header>
+
+    <nav>
+        <div><a href="home">Home</a></div>
+        <div><a href="join">Join</a></div>
+        <div><a href="contact">Contact</a></div>
+    </nav>
+    
+    <div class="container">
+        <section class="table-event">
+            <table>
+                <thead>
+                    <th>Date</th>
+                    <th>Activity</th>
+                    <th>Venue</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oct 7</td>
+                        <td>HTML Tables Workshop</td>
+                        <td>Computer Lab 1</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 14</td>
+                        <td>Forms Practice Night</td>
+                        <td>Computer Lab 2</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 21</td>
+                        <td colspan="2">Barangay Clean-Up Drive &mdash; venue announced by email</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <form action="">
+
+                <h2>Join the club</h2>
+                <div class="form">
+                    <label for="">Fullname</label>
+                    <input type="text" placeholder="Juan delaCrux">  
+                </div>
+                <div class="form">
+                    <label for="">Email</label>
+                    <input type="email" placeholder="juan@mail.com">  
+                </div>
+
+                <div class="form">
+                    <label for="">Program</label>
+                    <select name="" id="">
+                        <option value="BSCS">BSCS</option>
+                        <option value="BSCRIM">BSCRIM</option>
+                        <option value="BSBA">BSBA</option>
+                    </select>
+                </div>
+
+                <div class="form">
+                    <div for="">
+                        Year Level
+                    </div>
+                    <div>
+                        <input type="radio" name="year_level" value="1st Year" id="first" checked>
+                        <label for="first">1st Year</label>
+    
+                        <input type="radio" name="year_level" value="2nd Year" id="second">
+                        <label for="second">2nd Year</label>
+    
+                        <input type="radio" name="year_level" value="3rd Year" id="third">
+                        <label for="third">3rd Year</label>
+    
+                        <input type="radio" name="year_level" value="4th Year" id="fourth">
+                        <label for="fourth">4th Year</label>
+                    </div>
+
+                </div>
+
+                <div class="form">
+                    <div for="">
+                        Interest
+                    </div>
+                    <div>
+                        <input type="checkbox" id="webdesign">
+                        <label for="webdesign">Web Design</label>
+    
+                        <input type="checkbox" id="databases">
+                        <label for="databases">Databases</label>
+    
+                        <input type="checkbox" id="robotics">
+                        <label for="robotics">Robotics</label>
+                    </div>
+                </div>
+
+                <div class="form-button">
+                    <label for="">Why do you want to join?</label>
+                    <div>
+                        <textarea rows="5" placeholder="Why do you want to JOIN?"></textarea>
+                    </div>
+                </div>
+                 <div class="buttons">
+                     <button type="submit" class="submit">Sign up</button>
+                     <button type="reset" class="reset">Reset</button>
+                 </div>
+
+            </form>
+        </section>
+        <section>
+        
+            <article>
+                <div class="article-title">
+                    Lorem
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Cupiditate repellat quod rerum consequuntur aliquid exercitationem officiis enim fuga.
+                    Dolor dolore explicabo, sunt praesentium temporibus a animi eaque quae accusantium maxime.
+                    Magnam cumque reprehenderit dolor tempore asperiores consequatur, veniam placeat.
+                    Quam fugit culpa delectus nisi autem! Debitis sint id eaque sequi!
+                </p>
+
+            </article>
+        
+        </section>
+        <aside>
+            <div class="aside-title">My Two Case Study Shortlist</div>
+            <ol>
+                <li>Barangay Clean-Up Drive</li>
+                <li>My Journey to CS</li>
+            </ol>
+        </aside>
+    </div>
+    <footer>
+
+        <p>copyright angel pungak 2026</p>
+    </footer>
+</body>
+
+</html>
