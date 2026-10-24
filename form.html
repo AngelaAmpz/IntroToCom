@@ -6,6 +6,25 @@
     <title>Pulgo_Lab14</title>
 
     <style>
+
+         /*
+            Usability Notes:
+            1. Contrast: White navigation text on a dark teal background
+                for readability.
+            2. Click target size: Navigation links use 10px 15px padding
+                to provide a larger clickable area.
+            3. Keyboard test: Tested with the Tab key to check that
+                links receive visible focus and the Events dropdown
+                opens when focused.
+        */
+
+        :root{
+            --primary:#2b2bc7;
+            --hover-primary:#03c0c0;
+            --header-primary:#0101ba;
+
+        }
+
         header,body{
             margin: 0;
             padding: 0;
@@ -13,11 +32,96 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--header-primary);
+            padding: 0 35px;
+        }
+
+        .title {
+            background-color: var(--header-primary);
+            color: white;
+            padding: 15px 25px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
         *{
             box-sizing: border-box;
         }
 
+        nav{
+            background-color: var(--header-primary);
+            padding: 0 35px;
+
+        }
+        
+        /* MAIN NAV */
+        .navi nav > ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 4px;
+        }
+
+        .navi nav > ul > li {
+            position: relative;
+        }
+
+        .navi a {
+            display: block;
+            padding: 10px 15px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.3s ease-in-out;
+         }
+
+        .navi a:hover {
+            background-color: var(--hover-primary);
+            color: #ffffff;
+            border: 1px solid #0101ba;
+            border-radius: 5px;
+        }
+
+        .navi a:focus-visible{
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        } 
+        /* prmimary color code #0101d6*/
+
+        /* NAV FOR EVENTS */
+        .sub-menu{
+            display: none;
+            position: absolute;
+            top: 100%;
+            min-width: 180px;
+            left: 0;
+            list-style: none;
+            background-color: var(--header-primary);
+            z-index: 10;
+        }
+
+        .sub-menu nav {
+            padding: 0;
+        }
+
+        .sub-menu ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navi nav > ul > li:hover > .sub-menu,
+        .navi nav > ul > li:focus-within > .sub-menu {
+            display: block;
+
+        }
+
         .container{
+            width: 100%;
             background-color: white;
             border: 1px solid black;
             border-radius: 10px;
@@ -33,19 +137,36 @@
             gap: 10px;
         }
 
+        label{
+            display: block;
+            margin-bottom: 5px;
+        }
+
         input[type="text"]{
             padding: 5px 10px;
             border:1px solid black;
+        }
+
+        input[type="text"]:focus{
+            outline: 2px solid lightseagreen;
         }
 
         input[type="email"]{
             padding: 5px 10px;
             border:1px solid black;
         }
+
+        input[type="email"]:focus{
+            outline: 2px solid lightseagreen;
+        }
         
         select {
             padding: 5px 10px;
             border:1px solid black;
+        }
+
+        select:focus{
+            outline: 2px solid lightseagreen;
         }
 
         textarea{
@@ -54,10 +175,10 @@
             width: 100%;
         }
 
-        form {
-            width: 670px;
+        textarea:focus{
+            outline: 2px solid lightseagreen;
         }
-
+        
         form > div{
             margin: 10px 0;
         }
@@ -73,6 +194,7 @@
             background-color: #028181 ;
             color: white;
             transition: 0.3s ease-in-out;
+            cursor: pointer;
 
         }
 
@@ -80,12 +202,16 @@
             background-color: #03c0c0 ;
         }
 
+        .submit:active{
+            background-color: #00ba00;
+        }
+
         .reset{
             background-color: #fcfcfc ;
             color: rgb(2, 2, 2);
             transition: 0.3s ease-in-out;
             border: 1px solid black;
-
+            cursor: pointer;
         }
 
         .reset:hover{
@@ -104,6 +230,34 @@
     </style>
 </head>
 <body>
+    <div class="top">
+        <header>
+            <div class="title">
+                ICS Coding Club
+            </div>
+        </header>
+    
+        <div class="navi">
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Events</a>
+                        <div class="sub-menu"> 
+                            <nav>
+                                <ol>
+                                    <li><a href="">HTML Clinic</a></li>
+                                    <li><a href="">CSS Showdown</a></li>
+                                    <li><a href="">Portfolio Night</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </li>
+                    <li><a href="">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
     <div class="container">
         <h1>
             Join the Club &mdash; Angel A. Pulgo
