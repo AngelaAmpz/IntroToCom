@@ -80,6 +80,13 @@ nav a:focus-visible {
     border-radius: 5px;
 }
 
+.btn:hover {
+    background-color: #03c0c0;
+}
+
+.btn:active {
+    background-color: var(--aside-primary);
+}
 
 
 /* h1 message */
